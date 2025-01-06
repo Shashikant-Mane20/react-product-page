@@ -5,15 +5,15 @@ import "swiper/css/thumbs";
 import { Thumbs } from "swiper/modules";
 
 const ProductImages = ({ images }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null); // Reference for the thumbnail Swiper
+  const [thumbsSwiper, setThumbsSwiper] = useState(null); 
 
   return (
     <div>
-      {/* Main Image Slider without Navigation and Pagination */}
+   
       <Swiper
         modules={[Thumbs]}
         thumbs={{ swiper: thumbsSwiper }}
-        loop={true} // Enables infinite looping
+        loop={true} 
         className="main-slider"
       >
         {images.map((img, index) => (
@@ -27,14 +27,13 @@ const ProductImages = ({ images }) => {
         ))}
       </Swiper>
 
-      {/* Thumbnail Slider without Navigation */}
       <Swiper
         modules={[Thumbs]}
-        onSwiper={setThumbsSwiper} // Bind the thumbnail Swiper
+        onSwiper={setThumbsSwiper} 
         slidesPerView={4}
         spaceBetween={10}
         watchSlidesProgress
-        loop={true} // Enables infinite looping for thumbnails
+        loop={true} 
         className="thumb-slider mt-4"
       >
         {images.map((img, index) => (
